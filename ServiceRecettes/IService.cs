@@ -1,28 +1,47 @@
 ﻿//using System;
 //using System.Collections.Generic;
 //using System.Linq;
-using System.Runtime.Serialization;
+using Shared.Classes;
+using System;
+using System.Collections.Generic;
 using System.ServiceModel;
-//using System.ServiceModel.Description;
-//using System.Text;
-//using System.Runtime.Serialization;
 
 namespace ServiceRecettes
 
 {
-    // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom d'interface "IService1" à la fois dans le code et le fichier de configuration.
     [ServiceContract]
     public interface IService
     {
+        [OperationContract]
+        List<Recette> getRecipes();
+
+        [OperationContract]
+        Recette getRecipeByName(String name);
+
+        [OperationContract]
+        bool AddRecipe(Recette recette);
+
+        [OperationContract]
+        bool AddIngredient(String recipeName, Ingredient ingredient);
+
+        [OperationContract]
+        bool ReplaceIngredient(String recipeName, Ingredient ingredient, Ingredient replacement);
+
+        [OperationContract]
+        bool RemoveRecipe(String recipeName);
+
+        /*
         [OperationContract]
         string GetData(int value);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
+        */
 
         // TODO: ajoutez vos opérations de service ici
     }
-
+    /*
+    // Todo : supprimer la classe CompositeType, deprecated, unused
     // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
     // Vous pouvez ajouter des fichiers XSD au projet. Une fois le projet généré, vous pouvez utiliser directement les types de données qui y sont définis, avec l'espace de noms "ServiceRecettes.ContractType".
     [DataContract]
@@ -44,5 +63,7 @@ namespace ServiceRecettes
             get { return stringValue; }
             set { stringValue = value; }
         }
-    }
+
+    
+    }*/
 }

@@ -54,17 +54,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\ServiceRecettesReference\service.wsdl" />
-    <None Include="Connected Services\ServiceRecettesReference\service.xsd">
+    <None Include="Connected Services\ServiceRecettesReference\item.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceRecettesReference\service1.xsd">
+    <None Include="Connected Services\ServiceRecettesReference\item1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceRecettesReference\ServiceRecettes.xsd">
+    <None Include="Connected Services\ServiceRecettesReference\item2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceRecettesReference\ServiceRecettes.wsdl" />
     <None Include="Properties\DataSources\ServiceRecettes.CompositeType.datasource" />
+    <None Include="Properties\DataSources\Shared.Classes.Recette.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

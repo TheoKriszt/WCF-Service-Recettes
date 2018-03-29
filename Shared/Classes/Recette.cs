@@ -45,16 +45,5 @@ namespace Shared.Classes
             ingredients.Add(i);
         }
 
-        public override String ToString()
-        {
-            String ret = "Recette : " + nom + ", ingredients : ";
-            
-            foreach(Ingredient i in ingredients)
-            {
-                ret += i + ", ";
-            }
-            
-            return ret;
-        }
     }
 }

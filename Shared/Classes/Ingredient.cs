@@ -27,9 +27,11 @@ namespace Shared.Classes
             nom = n;
         }
 
+        /*
         public override String ToString()
         {
             return nom;
         }
+        */
     }
 }

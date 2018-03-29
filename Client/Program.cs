@@ -5,6 +5,8 @@ using System;
 //using System.Collections.Generic;
 //using System.Linq;
 using System.ServiceModel;
+using System.Collections.Generic;
+using Shared.Classes;
 //using System.Text;
 //using System.Threading.Tasks;
 
@@ -16,20 +18,23 @@ namespace Client
         {
 
             ServiceRecettesReference.IService serviceProxy = new ChannelFactory<ServiceRecettesReference.IService>("BasicHttpBinding_IService").CreateChannel();
-            
-            Console.WriteLine(serviceProxy.GetData(1));
+
+            //Console.WriteLine(serviceProxy.GetData(1));
             //ServiceRecettesReference.ServiceClient proxy = new ServiceRecettesReference.ServiceClient();
             //String s = proxy.GetData(0);
-            
-            CompositeType composite = new CompositeType
+
+            /*CompositeType composite = new CompositeType
             {
                 BoolValue = true,
                 StringValue = "<rien>"
-            };
+            };*/
 
             //Shared.CompositeType backCompo = serviceProxy.GetDataUsingDataContract(composite);
-            
+
             //Console.WriteLine(backCompo.StringValue);
+            //List<Recette> recettes = serviceProxy.getRecipes();
+            Recette[] recettes = serviceProxy.getRecipes();
+            Console.WriteLine(recettes[0].Nom);
             Console.ReadLine();
         }
     }

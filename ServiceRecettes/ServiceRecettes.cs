@@ -44,23 +44,74 @@ namespace ServiceRecettes
         public static List<Recette> Recettes { get => recettes; set => recettes = value; }
 
 
-
-        public string GetData(int value)
+        public bool AddIngredient(string recipeName, Ingredient ingredient)
         {
-            return string.Format("You entered: {0}", value);
+            Recette recipe = getRecipeByName(recipeName);
+
+            if (recipe != null)
+            {
+                recipe.AddIngredient(ingredient);
+                return true;
+            }
+            else return false;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public bool AddRecipe(Recette recette)
         {
-            if (composite == null)
+
+;            if (getRecipeByName(recette.Nom) == null)
             {
-                throw new ArgumentNullException("composite");
+                Recettes.Add(recette);
+                return true;
             }
-            if (composite.BoolValue)
+            else return false;
+            
+        }
+
+        public Recette getRecipeByName(String name)
+        {
+            foreach (Recette r in Recettes)
             {
-                composite.StringValue += "Suffix";
+                if (r.Nom.Equals(name))
+                {
+                    return r;
+                }
             }
-            return composite;
+            return null;
+        }
+
+        public List<Recette> getRecipes()
+        {
+            return Recettes;
+        }
+
+        public bool RemoveRecipe(string recipeName)
+        {
+            Recette toRemove = getRecipeByName(recipeName);
+
+            if (toRemove == null)
+            {
+                return false;
+            }
+            else
+            {
+                Recettes.Remove(toRemove);
+                return true;
+            }
+            
+        }
+
+        public bool ReplaceIngredient(string recipeName, Ingredient ingredient, Ingredient replacement)
+        {
+            Recette recipe = getRecipeByName(recipeName);
+
+            if (recipe != null && recipe.Ingredients.Contains(ingredient))
+            {
+                recipe.Ingredients.Remove(ingredient);
+                recipe.Ingredients.Add(replacement);
+                return true;
+            }
+            else return false;
         }
     }
 }

@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using ServiceRecettes;
-using System;
-
 namespace Client.ServiceRecettesReference {
     
     
@@ -18,19 +15,116 @@ namespace Client.ServiceRecettesReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceRecettesReference.IService")]
     public interface IService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetData", ReplyAction="http://tempuri.org/IService/GetDataResponse")]
-        string GetData(int value);
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetData", ReplyAction="http://tempuri.org/IService/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipes", ReplyAction="http://tempuri.org/IService/getRecipesResponse")]
+        Shared.Classes.Recette[] getRecipes();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipes", ReplyAction="http://tempuri.org/IService/getRecipesResponse")]
+        System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipeByName", ReplyAction="http://tempuri.org/IService/getRecipeByNameResponse")]
+        Shared.Classes.Recette getRecipeByName(string name);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipeByName", ReplyAction="http://tempuri.org/IService/getRecipeByNameResponse")]
+        System.Threading.Tasks.Task<Shared.Classes.Recette> getRecipeByNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddRecipe", ReplyAction="http://tempuri.org/IService/AddRecipeResponse")]
+        bool AddRecipe(Shared.Classes.Recette recette);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddRecipe", ReplyAction="http://tempuri.org/IService/AddRecipeResponse")]
+        System.Threading.Tasks.Task<bool> AddRecipeAsync(Shared.Classes.Recette recette);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddIngredient", ReplyAction="http://tempuri.org/IService/AddIngredientResponse")]
+        bool AddIngredient(string recipeName, Shared.Classes.Ingredient ingredient);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddIngredient", ReplyAction="http://tempuri.org/IService/AddIngredientResponse")]
+        System.Threading.Tasks.Task<bool> AddIngredientAsync(string recipeName, Shared.Classes.Ingredient ingredient);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ReplaceIngredient", ReplyAction="http://tempuri.org/IService/ReplaceIngredientResponse")]
+        bool ReplaceIngredient(string recipeName, Shared.Classes.Ingredient ingredient, Shared.Classes.Ingredient replacement);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ReplaceIngredient", ReplyAction="http://tempuri.org/IService/ReplaceIngredientResponse")]
+        System.Threading.Tasks.Task<bool> ReplaceIngredientAsync(string recipeName, Shared.Classes.Ingredient ingredient, Shared.Classes.Ingredient replacement);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveRecipe", ReplyAction="http://tempuri.org/IService/RemoveRecipeResponse")]
+        bool RemoveRecipe(string recipeName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveRecipe", ReplyAction="http://tempuri.org/IService/RemoveRecipeResponse")]
+        System.Threading.Tasks.Task<bool> RemoveRecipeAsync(string recipeName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IServiceChannel : Client.ServiceRecettesReference.IService, System.ServiceModel.IClientChannel {
     }
     
-    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ServiceClient : System.ServiceModel.ClientBase<Client.ServiceRecettesReference.IService>, Client.ServiceRecettesReference.IService {
+        
+        public ServiceClient() {
+        }
+        
+        public ServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Shared.Classes.Recette[] getRecipes() {
+            return base.Channel.getRecipes();
+        }
+        
+        public System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipesAsync() {
+            return base.Channel.getRecipesAsync();
+        }
+        
+        public Shared.Classes.Recette getRecipeByName(string name) {
+            return base.Channel.getRecipeByName(name);
+        }
+        
+        public System.Threading.Tasks.Task<Shared.Classes.Recette> getRecipeByNameAsync(string name) {
+            return base.Channel.getRecipeByNameAsync(name);
+        }
+        
+        public bool AddRecipe(Shared.Classes.Recette recette) {
+            return base.Channel.AddRecipe(recette);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddRecipeAsync(Shared.Classes.Recette recette) {
+            return base.Channel.AddRecipeAsync(recette);
+        }
+        
+        public bool AddIngredient(string recipeName, Shared.Classes.Ingredient ingredient) {
+            return base.Channel.AddIngredient(recipeName, ingredient);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddIngredientAsync(string recipeName, Shared.Classes.Ingredient ingredient) {
+            return base.Channel.AddIngredientAsync(recipeName, ingredient);
+        }
+        
+        public bool ReplaceIngredient(string recipeName, Shared.Classes.Ingredient ingredient, Shared.Classes.Ingredient replacement) {
+            return base.Channel.ReplaceIngredient(recipeName, ingredient, replacement);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ReplaceIngredientAsync(string recipeName, Shared.Classes.Ingredient ingredient, Shared.Classes.Ingredient replacement) {
+            return base.Channel.ReplaceIngredientAsync(recipeName, ingredient, replacement);
+        }
+        
+        public bool RemoveRecipe(string recipeName) {
+            return base.Channel.RemoveRecipe(recipeName);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveRecipeAsync(string recipeName) {
+            return base.Channel.RemoveRecipeAsync(recipeName);
+        }
+    }
 }

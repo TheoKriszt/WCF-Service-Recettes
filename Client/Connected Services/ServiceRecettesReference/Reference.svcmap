@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/ServiceRecettes/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:8733/ServiceRecettes/ServiceRecettes/?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7a9bdab8-be9d-4f1e-ae86-588769412b59" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="44a0d245-0893-45b8-bcca-52cc0f81d2c0" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="1d9c227e-3400-4404-bb1d-db08767b2e51" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/mex" />
-    <MetadataFile FileName="ServiceRecettes.xsd" MetadataType="Schema" ID="f1e83718-a1d1-4fa8-8601-981bc5b27fab" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/mex" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="283b6831-9d1b-4351-adb0-e903fa963a5c" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/ServiceRecettes/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="2a6c1076-6d5c-4758-9252-ad04441dbfb3" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/ServiceRecettes/?xsd=xsd2" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="e50d92c3-bbcf-4ef3-9b3c-f98c003332dd" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/ServiceRecettes/?xsd=xsd0" />
+    <MetadataFile FileName="ServiceRecettes.wsdl" MetadataType="Wsdl" ID="59e5ccab-8e44-47df-a8a5-dff59612d340" SourceId="1" SourceUrl="http://localhost:8733/ServiceRecettes/ServiceRecettes/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
