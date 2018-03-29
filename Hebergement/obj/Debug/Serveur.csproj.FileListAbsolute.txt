@@ -1,0 +1,6 @@
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Service_Recettes_WCF\bin\Debug\Service_Recettes_WCF.exe.config
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Service_Recettes_WCF\bin\Debug\Service_Recettes_WCF.exe
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Service_Recettes_WCF\bin\Debug\Service_Recettes_WCF.pdb
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Service_Recettes_WCF\obj\Debug\Serveur.csproj.CoreCompileInputs.cache
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Service_Recettes_WCF\obj\Debug\Service_Recettes_WCF.exe
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Service_Recettes_WCF\obj\Debug\Service_Recettes_WCF.pdb

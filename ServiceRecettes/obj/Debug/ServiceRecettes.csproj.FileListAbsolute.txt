@@ -1,0 +1,9 @@
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\bin\Debug\ServiceRecettes.dll
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\bin\Debug\ServiceRecettes.pdb
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CoreCompileInputs.cache
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\obj\Debug\ServiceRecettes.dll
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\obj\Debug\ServiceRecettes.pdb
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\bin\Debug\Shared.dll
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\bin\Debug\Shared.pdb
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\obj\Debug\ServiceRecettes.csprojResolveAssemblyReference.cache
