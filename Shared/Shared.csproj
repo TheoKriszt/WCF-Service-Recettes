@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Classes\Ingredient.cs" />
     <Compile Include="Classes\Recette.cs" />
+    <Compile Include="IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

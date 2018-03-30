@@ -1,6 +1,6 @@
-﻿//using Shared;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Shared;
 using Shared.Classes;
 
 namespace ServiceRecettes
@@ -72,7 +72,7 @@ namespace ServiceRecettes
         {
             foreach (Recette r in Recettes)
             {
-                if (r.Nom.Equals(name))
+                if(r.Nom.ToLower().Contains(name.ToLower()))
                 {
                     return r;
                 }
@@ -105,7 +105,10 @@ namespace ServiceRecettes
         {
             Recette recipe = getRecipeByName(recipeName);
 
-            if (recipe != null && recipe.Ingredients.Contains(ingredient))
+            if (recipe != null 
+                && recipe.Ingredients.Contains(ingredient) 
+                && !recipe.Ingredients.Contains(replacement)
+                )
             {
                 recipe.Ingredients.Remove(ingredient);
                 recipe.Ingredients.Add(replacement);

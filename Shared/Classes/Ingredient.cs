@@ -27,11 +27,23 @@ namespace Shared.Classes
             nom = n;
         }
 
-        /*
+        
         public override String ToString()
         {
             return nom;
         }
-        */
+
+        public override bool Equals(object obj)
+        {
+            return Nom.Equals((obj as Ingredient).Nom);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 142165330;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(nom);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Nom);
+            return hashCode;
+        }
     }
 }

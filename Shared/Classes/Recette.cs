@@ -45,5 +45,15 @@ namespace Shared.Classes
             ingredients.Add(i);
         }
 
+        
+        public override String ToString()
+        {
+            String ret = Nom + " : \n";
+            foreach(Ingredient i in Ingredients){
+                ret += "\t" + i.ToString() + "\n";
+            }
+            ret += "-----------------------";
+            return ret;
+        }
     }
 }
