@@ -19,6 +19,12 @@
   <wsdl:message name="IService_getRecipeByName_OutputMessage">
     <wsdl:part name="parameters" element="tns:getRecipeByNameResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_getRecipeByIngredientName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipeByIngredientName" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRecipeByIngredientName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRecipeByIngredientNameResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_AddRecipe_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecipe" />
   </wsdl:message>
@@ -43,6 +49,36 @@
   <wsdl:message name="IService_RemoveRecipe_OutputMessage">
     <wsdl:part name="parameters" element="tns:RemoveRecipeResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_RemoveFromCurrentSelection_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCurrentSelection" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveFromCurrentSelection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromCurrentSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSelection_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSelection" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSelection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCurrentSelection_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrentSelection" />
+  </wsdl:message>
+  <wsdl:message name="IService_SaveCurrentSelection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrentSelectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_OpenConnexion_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenConnexion" />
+  </wsdl:message>
+  <wsdl:message name="IService_OpenConnexion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenConnexionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CloseConnexion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseConnexion" />
+  </wsdl:message>
+  <wsdl:message name="IService_CloseConnexion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseConnexionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="getRecipes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getRecipes" message="tns:IService_getRecipes_InputMessage" />
@@ -51,6 +87,10 @@
     <wsdl:operation name="getRecipeByName">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/getRecipeByName" message="tns:IService_getRecipeByName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/getRecipeByNameResponse" message="tns:IService_getRecipeByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRecipeByIngredientName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getRecipeByIngredientName" message="tns:IService_getRecipeByIngredientName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getRecipeByIngredientNameResponse" message="tns:IService_getRecipeByIngredientName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecipe">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddRecipe" message="tns:IService_AddRecipe_InputMessage" />
@@ -68,6 +108,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveRecipe" message="tns:IService_RemoveRecipe_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveRecipeResponse" message="tns:IService_RemoveRecipe_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="RemoveFromCurrentSelection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveFromCurrentSelection" message="tns:IService_RemoveFromCurrentSelection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveFromCurrentSelectionResponse" message="tns:IService_RemoveFromCurrentSelection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSelection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSelection" message="tns:IService_GetSelection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSelectionResponse" message="tns:IService_GetSelection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrentSelection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SaveCurrentSelection" message="tns:IService_SaveCurrentSelection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SaveCurrentSelectionResponse" message="tns:IService_SaveCurrentSelection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenConnexion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/OpenConnexion" message="tns:IService_OpenConnexion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/OpenConnexionResponse" message="tns:IService_OpenConnexion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseConnexion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CloseConnexion" message="tns:IService_CloseConnexion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CloseConnexionResponse" message="tns:IService_CloseConnexion_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -82,6 +142,15 @@
     </wsdl:operation>
     <wsdl:operation name="getRecipeByName">
       <soap:operation soapAction="http://tempuri.org/IService/getRecipeByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecipeByIngredientName">
+      <soap:operation soapAction="http://tempuri.org/IService/getRecipeByIngredientName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -118,6 +187,51 @@
     </wsdl:operation>
     <wsdl:operation name="RemoveRecipe">
       <soap:operation soapAction="http://tempuri.org/IService/RemoveRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromCurrentSelection">
+      <soap:operation soapAction="http://tempuri.org/IService/RemoveFromCurrentSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSelection">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrentSelection">
+      <soap:operation soapAction="http://tempuri.org/IService/SaveCurrentSelection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenConnexion">
+      <soap:operation soapAction="http://tempuri.org/IService/OpenConnexion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseConnexion">
+      <soap:operation soapAction="http://tempuri.org/IService/CloseConnexion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -14,10 +14,12 @@ namespace Client
 {
     class Program
     {
+        private static int id;
         private static ServiceRecettesReference.IService serviceProxy = new ChannelFactory<ServiceRecettesReference.IService>("BasicHttpBinding_IService").CreateChannel();
         static void Main(string[] args)
         {
 
+            id = serviceProxy.OpenConnexion();
             Console.WriteLine("[Client WCF  - Service Recettes]");
             
 
@@ -33,6 +35,7 @@ namespace Client
                 {
                     case 0:
                         process = false;
+                        serviceProxy.CloseConnexion(id);
                         break;
                     case 1: // all recipes
                         GetRecipes();
@@ -52,6 +55,18 @@ namespace Client
                     case 6: // alter ingredient
                         ReplaceIngredientInRecipe();
                         break;
+                    case 7: // recipes by ingredient
+                        GetRecipeByIngredientName();
+                        break;
+                    case 8: //save in current selection
+                        SaveCurrentSelection();
+                        break;
+                    case 9: // print current selection
+                        PrintCurrentSelection();
+                        break;
+                    case 10:    // remove name from current selection
+                        RemoveFromCurrentSelection();
+                        break;
                     default:
                         Console.WriteLine("Choix invalide : " + choice);
                         break;
@@ -65,6 +80,56 @@ namespace Client
 
             Console.WriteLine("Appuyez sur une touche pour fermer le client");
             Console.ReadLine();
+        }
+
+        private static void RemoveFromCurrentSelection()
+        {
+            Console.WriteLine("Supprimer quelle recettte de la selection courante ? ");
+            String name = Console.ReadLine();
+
+            bool status = serviceProxy.RemoveFromCurrentSelection(name, id);
+            if( status )
+            {
+                Console.WriteLine("Element supprime");
+            }else Console.WriteLine("Erreur : l'element n'existe pas dans la selection");
+        }
+
+        private static void PrintCurrentSelection()
+        {
+            Recette[] selection = serviceProxy.GetSelection(id);
+
+            if(selection.Length > 0){
+                Console.WriteLine("Recettes selectionnees : ");
+                foreach(Recette r in selection)
+                {
+                    Console.WriteLine(r);
+                }
+            }else
+            {
+                Console.WriteLine("La selection est vide");
+            }                
+        }
+
+        private static void SaveCurrentSelection()
+        {
+            serviceProxy.SaveCurrentSelection(id);
+        }
+
+        private static void GetRecipeByIngredientName()
+        {
+            Console.WriteLine("Le nom de l'ingrédient doit être ? ");
+            String ingredientName = Console.ReadLine();
+
+            Recette[] recettes = serviceProxy.getRecipeByIngredientName(ingredientName, id);
+            if (recettes != null)
+            {
+                foreach(Recette r in recettes)
+                    Console.WriteLine(r);
+            }
+            else
+            {
+                Console.WriteLine("Aucune recette correspondante");
+            }
         }
 
         private static void ReplaceIngredientInRecipe()
@@ -149,7 +214,7 @@ namespace Client
             Console.WriteLine("Le nom de la recette doit être ? ");
             String recipeName = Console.ReadLine();
 
-            Recette r = serviceProxy.getRecipeByName(recipeName);
+            Recette r = serviceProxy.getRecipeByName(recipeName, id);
             if (r != null)
             {
                 Console.WriteLine(r);
@@ -163,7 +228,7 @@ namespace Client
 
         private static void GetRecipes()
         {
-            foreach(Recette r in serviceProxy.getRecipes())
+            foreach(Recette r in serviceProxy.getRecipes(id))
             {
                 Console.WriteLine(r);
             }
@@ -191,10 +256,16 @@ namespace Client
         {
             Console.WriteLine("[1] - Lister toutes les recettes");
             Console.WriteLine("[2] - Trouver une recette par nom");
-            Console.WriteLine("[3] - Ajouter une recette");
-            Console.WriteLine("[4] - Supprimer une recette");
+            Console.WriteLine("[3] - Ajouter une recette dans la base");
+            Console.WriteLine("[4] - Supprimer une recette de la base");
             Console.WriteLine("[5] - Ajouter un ingrédient à une recette");
             Console.WriteLine("[6] - Remplacer un ingrédient dans une recette");
+            Console.WriteLine("[7] - Trouver les recettes comportant un certain ingredient");
+            Console.WriteLine("\n--------------  Selection courante  --------------");
+            Console.WriteLine("[ 8] - Sauver la dernière recherche dans la selection courante");
+            Console.WriteLine("[ 9] - Afficher la selection courante");
+            Console.WriteLine("[10] - Supprimer une recette de la selection courante");
+            Console.WriteLine("\n--------------------------------------------------");
             Console.WriteLine("[0] - Fermer ce programme");
             Console.WriteLine();
             Console.Write("Choix : ");

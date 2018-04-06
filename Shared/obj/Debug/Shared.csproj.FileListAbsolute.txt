@@ -3,3 +3,9 @@ C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Shared\bin\
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Shared\obj\Debug\Shared.dll
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Shared\obj\Debug\Shared.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Shared\bin\Debug\Shared.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Shared\bin\Debug\Shared.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Shared\obj\Debug\Shared.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Shared\obj\Debug\Shared.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Shared\obj\Debug\Shared.pdb
+C:\Users\Utilisateur\source\repos\WCF-Service-Recettes\Shared\obj\Debug\Shared.csprojResolveAssemblyReference.cache

@@ -10,10 +10,13 @@ namespace Shared
     public interface IService
     {
         [OperationContract]
-        List<Recette> getRecipes();
+        List<Recette> getRecipes(int clientId);
 
         [OperationContract]
-        Recette getRecipeByName(String name);
+        Recette getRecipeByName(String name, int clientId);
+
+        [OperationContract]
+        List<Recette> getRecipeByIngredientName(String name, int clientId);
 
         [OperationContract]
         bool AddRecipe(Recette recette);
@@ -26,6 +29,21 @@ namespace Shared
 
         [OperationContract]
         bool RemoveRecipe(String recipeName);
+
+        [OperationContract]
+        bool RemoveFromCurrentSelection(String name, int clientId);
+
+        [OperationContract]
+        List<Recette> GetSelection(int clientId);
+
+        [OperationContract]
+        void SaveCurrentSelection(int clientId);
+
+        [OperationContract]
+        int OpenConnexion();
+
+        [OperationContract]
+        void CloseConnexion(int clientId);
 
     }
 

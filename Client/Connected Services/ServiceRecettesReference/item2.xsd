@@ -3,7 +3,9 @@
   <xs:import schemaLocation="http://localhost:8733/ServiceRecettes/ServiceRecettes/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Shared.Classes" />
   <xs:element name="getRecipes">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getRecipesResponse">
@@ -17,6 +19,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -27,10 +30,25 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getRecipeByIngredientName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRecipeByIngredientNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="getRecipeByIngredientNameResult" nillable="true" type="q3:ArrayOfRecette" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddRecipe">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="recette" nillable="true" type="q3:Recette" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="recette" nillable="true" type="q4:Recette" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -45,7 +63,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="recipeName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="ingredient" nillable="true" type="q4:Ingredient" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="ingredient" nillable="true" type="q5:Ingredient" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,8 +78,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="recipeName" nillable="true" type="xs:string" />
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="ingredient" nillable="true" type="q5:Ingredient" />
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="replacement" nillable="true" type="q6:Ingredient" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="ingredient" nillable="true" type="q6:Ingredient" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="replacement" nillable="true" type="q7:Ingredient" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -84,6 +102,71 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="RemoveRecipeResult" type="xs:boolean" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveFromCurrentSelection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveFromCurrentSelectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveFromCurrentSelectionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSelection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSelectionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Shared.Classes" minOccurs="0" name="GetSelectionResult" nillable="true" type="q8:ArrayOfRecette" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCurrentSelection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCurrentSelectionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenConnexion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OpenConnexionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OpenConnexionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseConnexion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="clientId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseConnexionResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

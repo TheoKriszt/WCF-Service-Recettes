@@ -10,7 +10,9 @@ namespace ServiceRecettes
     {
         private static List<Recette> recettes = new List<Recette>();
         private static List<int> sessionsIds = new List<int>();
-
+        private static Dictionary<int, List<Recette>> selections = new Dictionary<int, List<Recette>>();
+        private static Dictionary<int, List<Recette>> lastSearches = new Dictionary<int, List<Recette>>();
+        
         static ServiceRecettes()
         {
             
@@ -68,11 +70,52 @@ namespace ServiceRecettes
             
         }
 
-        public Recette getRecipeByName(String name)
+        public void CloseConnexion(int clientID)
+        {
+            lastSearches.Remove(clientID);
+            selections.Remove(clientID);
+        }
+
+        public List<Recette> getRecipeByIngredientName(string name, int clientId)
+        {
+            List<Recette> results = new List<Recette>();
+            foreach (Recette r in Recettes)
+            {
+                if (r.ContainsIngredient(name))
+                {
+                    results.Add(r);
+                }
+            }
+
+            lastSearches.Remove(clientId);
+            lastSearches.Add(clientId, results);
+
+            return results;
+        }
+
+
+        public Recette getRecipeByName(String name, int clientId)
         {
             foreach (Recette r in Recettes)
             {
-                if(r.Nom.ToLower().Contains(name.ToLower()))
+                if (r.Nom.ToLower().Contains(name.ToLower()))
+                {
+                    lastSearches.Remove(clientId);
+                    lastSearches.Add(clientId, new List<Recette>()
+                    {
+                        r
+                    });
+                    return r;
+                }
+            }
+            return null;
+        }
+
+        private Recette getRecipeByName(String name)
+        {
+            foreach (Recette r in Recettes)
+            {
+                if (r.Nom.ToLower().Contains(name.ToLower()))
                 {
                     return r;
                 }
@@ -80,9 +123,49 @@ namespace ServiceRecettes
             return null;
         }
 
-        public List<Recette> getRecipes()
+        public List<Recette> getRecipes(int clientID)
         {
+            lastSearches.Remove(clientID);
+            lastSearches.Add(clientID, recettes);
+
             return Recettes;
+        }
+
+
+        public List<Recette> GetSelection(int clientId)
+        {
+            List<Recette> results = new List<Recette>();
+
+            selections.TryGetValue(clientId, out results);
+
+            return results;
+            
+        }
+
+        public int OpenConnexion()
+        {
+            int clientsNb = selections.Count;
+            selections.Add(clientsNb, new List<Recette>());
+            lastSearches.Add(clientsNb, new List<Recette>());
+            return clientsNb;
+        }
+
+        public bool RemoveFromCurrentSelection(string name, int clientId)
+        {
+            if (selections.TryGetValue(clientId, out List<Recette> results))
+            {
+                foreach (Recette r in results)
+                {
+                    if (name.Equals(r.Nom))
+                    {
+                        results.Remove(r);
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+           
         }
 
         public bool RemoveRecipe(string recipeName)
@@ -115,6 +198,17 @@ namespace ServiceRecettes
                 return true;
             }
             else return false;
+        }
+
+        public void SaveCurrentSelection(int clientId)
+        {
+            List<Recette> last = new List<Recette>();
+            List<Recette> selected = new List<Recette>();
+
+            lastSearches.TryGetValue(clientId, out last);
+
+            selections.Remove(clientId);
+            selections.Add(clientId, last);
         }
     }
 }

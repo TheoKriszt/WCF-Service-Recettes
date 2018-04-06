@@ -16,16 +16,22 @@ namespace Client.ServiceRecettesReference {
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipes", ReplyAction="http://tempuri.org/IService/getRecipesResponse")]
-        Shared.Classes.Recette[] getRecipes();
+        Shared.Classes.Recette[] getRecipes(int clientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipes", ReplyAction="http://tempuri.org/IService/getRecipesResponse")]
-        System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipesAsync();
+        System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipesAsync(int clientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipeByName", ReplyAction="http://tempuri.org/IService/getRecipeByNameResponse")]
-        Shared.Classes.Recette getRecipeByName(string name);
+        Shared.Classes.Recette getRecipeByName(string name, int clientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipeByName", ReplyAction="http://tempuri.org/IService/getRecipeByNameResponse")]
-        System.Threading.Tasks.Task<Shared.Classes.Recette> getRecipeByNameAsync(string name);
+        System.Threading.Tasks.Task<Shared.Classes.Recette> getRecipeByNameAsync(string name, int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipeByIngredientName", ReplyAction="http://tempuri.org/IService/getRecipeByIngredientNameResponse")]
+        Shared.Classes.Recette[] getRecipeByIngredientName(string name, int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/getRecipeByIngredientName", ReplyAction="http://tempuri.org/IService/getRecipeByIngredientNameResponse")]
+        System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipeByIngredientNameAsync(string name, int clientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddRecipe", ReplyAction="http://tempuri.org/IService/AddRecipeResponse")]
         bool AddRecipe(Shared.Classes.Recette recette);
@@ -50,6 +56,36 @@ namespace Client.ServiceRecettesReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveRecipe", ReplyAction="http://tempuri.org/IService/RemoveRecipeResponse")]
         System.Threading.Tasks.Task<bool> RemoveRecipeAsync(string recipeName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveFromCurrentSelection", ReplyAction="http://tempuri.org/IService/RemoveFromCurrentSelectionResponse")]
+        bool RemoveFromCurrentSelection(string name, int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/RemoveFromCurrentSelection", ReplyAction="http://tempuri.org/IService/RemoveFromCurrentSelectionResponse")]
+        System.Threading.Tasks.Task<bool> RemoveFromCurrentSelectionAsync(string name, int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSelection", ReplyAction="http://tempuri.org/IService/GetSelectionResponse")]
+        Shared.Classes.Recette[] GetSelection(int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetSelection", ReplyAction="http://tempuri.org/IService/GetSelectionResponse")]
+        System.Threading.Tasks.Task<Shared.Classes.Recette[]> GetSelectionAsync(int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCurrentSelection", ReplyAction="http://tempuri.org/IService/SaveCurrentSelectionResponse")]
+        void SaveCurrentSelection(int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/SaveCurrentSelection", ReplyAction="http://tempuri.org/IService/SaveCurrentSelectionResponse")]
+        System.Threading.Tasks.Task SaveCurrentSelectionAsync(int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/OpenConnexion", ReplyAction="http://tempuri.org/IService/OpenConnexionResponse")]
+        int OpenConnexion();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/OpenConnexion", ReplyAction="http://tempuri.org/IService/OpenConnexionResponse")]
+        System.Threading.Tasks.Task<int> OpenConnexionAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CloseConnexion", ReplyAction="http://tempuri.org/IService/CloseConnexionResponse")]
+        void CloseConnexion(int clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CloseConnexion", ReplyAction="http://tempuri.org/IService/CloseConnexionResponse")]
+        System.Threading.Tasks.Task CloseConnexionAsync(int clientId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -79,20 +115,28 @@ namespace Client.ServiceRecettesReference {
                 base(binding, remoteAddress) {
         }
         
-        public Shared.Classes.Recette[] getRecipes() {
-            return base.Channel.getRecipes();
+        public Shared.Classes.Recette[] getRecipes(int clientId) {
+            return base.Channel.getRecipes(clientId);
         }
         
-        public System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipesAsync() {
-            return base.Channel.getRecipesAsync();
+        public System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipesAsync(int clientId) {
+            return base.Channel.getRecipesAsync(clientId);
         }
         
-        public Shared.Classes.Recette getRecipeByName(string name) {
-            return base.Channel.getRecipeByName(name);
+        public Shared.Classes.Recette getRecipeByName(string name, int clientId) {
+            return base.Channel.getRecipeByName(name, clientId);
         }
         
-        public System.Threading.Tasks.Task<Shared.Classes.Recette> getRecipeByNameAsync(string name) {
-            return base.Channel.getRecipeByNameAsync(name);
+        public System.Threading.Tasks.Task<Shared.Classes.Recette> getRecipeByNameAsync(string name, int clientId) {
+            return base.Channel.getRecipeByNameAsync(name, clientId);
+        }
+        
+        public Shared.Classes.Recette[] getRecipeByIngredientName(string name, int clientId) {
+            return base.Channel.getRecipeByIngredientName(name, clientId);
+        }
+        
+        public System.Threading.Tasks.Task<Shared.Classes.Recette[]> getRecipeByIngredientNameAsync(string name, int clientId) {
+            return base.Channel.getRecipeByIngredientNameAsync(name, clientId);
         }
         
         public bool AddRecipe(Shared.Classes.Recette recette) {
@@ -125,6 +169,46 @@ namespace Client.ServiceRecettesReference {
         
         public System.Threading.Tasks.Task<bool> RemoveRecipeAsync(string recipeName) {
             return base.Channel.RemoveRecipeAsync(recipeName);
+        }
+        
+        public bool RemoveFromCurrentSelection(string name, int clientId) {
+            return base.Channel.RemoveFromCurrentSelection(name, clientId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveFromCurrentSelectionAsync(string name, int clientId) {
+            return base.Channel.RemoveFromCurrentSelectionAsync(name, clientId);
+        }
+        
+        public Shared.Classes.Recette[] GetSelection(int clientId) {
+            return base.Channel.GetSelection(clientId);
+        }
+        
+        public System.Threading.Tasks.Task<Shared.Classes.Recette[]> GetSelectionAsync(int clientId) {
+            return base.Channel.GetSelectionAsync(clientId);
+        }
+        
+        public void SaveCurrentSelection(int clientId) {
+            base.Channel.SaveCurrentSelection(clientId);
+        }
+        
+        public System.Threading.Tasks.Task SaveCurrentSelectionAsync(int clientId) {
+            return base.Channel.SaveCurrentSelectionAsync(clientId);
+        }
+        
+        public int OpenConnexion() {
+            return base.Channel.OpenConnexion();
+        }
+        
+        public System.Threading.Tasks.Task<int> OpenConnexionAsync() {
+            return base.Channel.OpenConnexionAsync();
+        }
+        
+        public void CloseConnexion(int clientId) {
+            base.Channel.CloseConnexion(clientId);
+        }
+        
+        public System.Threading.Tasks.Task CloseConnexionAsync(int clientId) {
+            return base.Channel.CloseConnexionAsync(clientId);
         }
     }
 }

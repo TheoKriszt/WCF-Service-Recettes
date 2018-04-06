@@ -22,3 +22,16 @@ C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Hebergement
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Hebergement\obj\Debug\Hebergement.csproj.CoreCompileInputs.cache
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Hebergement\obj\Debug\Hebergement.exe
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Hebergement\obj\Debug\Hebergement.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\Hebergement.exe.config
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\Hebergement.exe
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\Hebergement.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\ServiceRecettes.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\Shared.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\ServiceRecettes.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\bin\Debug\Shared.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\obj\Debug\Hebergement.csprojResolveAssemblyReference.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\obj\Debug\Hebergement.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\obj\Debug\Hebergement.csproj.CopyComplete
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\obj\Debug\Hebergement.exe
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Hebergement\obj\Debug\Hebergement.pdb

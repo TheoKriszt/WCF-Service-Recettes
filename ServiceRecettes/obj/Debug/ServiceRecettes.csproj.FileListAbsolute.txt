@@ -7,3 +7,13 @@ C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRece
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\bin\Debug\Shared.dll
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\bin\Debug\Shared.pdb
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\ServiceRecettes\obj\Debug\ServiceRecettes.csprojResolveAssemblyReference.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\bin\Debug\ServiceRecettes.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\bin\Debug\ServiceRecettes.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\bin\Debug\Shared.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\bin\Debug\Shared.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\obj\Debug\ServiceRecettes.csprojResolveAssemblyReference.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\obj\Debug\ServiceRecettes.csproj.CopyComplete
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\obj\Debug\ServiceRecettes.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\ServiceRecettes\obj\Debug\ServiceRecettes.pdb

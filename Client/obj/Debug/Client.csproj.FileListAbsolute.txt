@@ -10,3 +10,16 @@ C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\ServiceRecettes.dll
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\ServiceRecettes.pdb
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\Client.exe.config
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\Client.exe
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\Client.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\ServiceRecettes.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\Shared.dll
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\ServiceRecettes.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\bin\Debug\Shared.pdb
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\obj\Debug\Client.exe
+C:\Users\Utilisateur\Source\Repos\WCF-Service-Recettes\Client\obj\Debug\Client.pdb

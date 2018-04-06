@@ -55,5 +55,18 @@ namespace Shared.Classes
             ret += "-----------------------";
             return ret;
         }
+
+        public bool ContainsIngredient(string name)
+        {
+
+            foreach(Ingredient i in Ingredients)
+            {
+                if (i.Nom.Equals(name))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
