@@ -1,6 +1,6 @@
 ﻿//using ServiceRecettes;
 using Shared;
-using ServiceRecettes;
+//using ServiceRecettes;
 using System;
 //using System.Collections.Generic;
 //using System.Linq;
@@ -14,9 +14,11 @@ namespace Client
 {
     class Program
     {
-        private static ServiceRecettesReference.IService serviceProxy = new ChannelFactory<ServiceRecettesReference.IService>("BasicHttpBinding_IService").CreateChannel();
+        private static IService serviceProxy = new ChannelFactory<IService>("ServiceRecettes.ServiceRecettes").CreateChannel();
+        //private static ServiceRecettesReference.IService serviceProxy = new ChannelFactory<ServiceRecettesReference.IService>("ServiceRecettes.ServiceRecettes").CreateChannel();
         static void Main(string[] args)
         {
+            
 
             Console.WriteLine("[Client WCF  - Service Recettes]");
             

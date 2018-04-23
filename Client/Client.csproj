@@ -44,26 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServiceRecettesReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\ServiceRecettesReference\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceRecettesReference\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceRecettesReference\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceRecettesReference\ServiceRecettes.wsdl" />
     <None Include="Properties\DataSources\ServiceRecettes.CompositeType.datasource" />
     <None Include="Properties\DataSources\Shared.Classes.Recette.datasource" />
   </ItemGroup>
@@ -71,24 +56,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceRecettesReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceRecettesReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceRecettesReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceRecettesReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ServiceRecettes\ServiceRecettes.csproj">
-      <Project>{CBB3699D-CF76-4B2F-A2D2-F597E1025D0C}</Project>
-      <Name>ServiceRecettes</Name>
+    <ProjectReference Include="..\Hebergement\Hebergement.csproj">
+      <Project>{25ae9d32-067a-4856-9563-78b5b27369e1}</Project>
+      <Name>Hebergement</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{00453531-623b-4b37-b44d-8acd92115049}</Project>

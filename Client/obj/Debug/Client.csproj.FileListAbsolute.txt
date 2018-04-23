@@ -10,3 +10,6 @@ C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\ServiceRecettes.dll
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\ServiceRecettes.pdb
 C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\ServiceRecettes.dll.config
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\Hebergement.exe
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\Hebergement.pdb
+C:\Users\Theo\source\repos\Service_Recettes_WCF\Service_Recettes_WCF\Client\bin\Debug\Hebergement.exe.config
